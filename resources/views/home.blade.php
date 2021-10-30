@@ -9,7 +9,7 @@
                     <h5 class="title-small mb-2">Introduce</h5>
                     <h3 class="title-toobig">My Name is Hidayat</h3>
                     <p class="mt-4">I'm Backend Developer</p>
-                    <a href="#btn" class="btn btn-style btn-outline-dark mt-lg-5 mt-4">About Me</a>
+                    <a href="#btn" class="btn btn-style btn-outline-light mt-lg-5 mt-4">About Me</a>
                     <br>
                     <a href="#btn" class="btn btn-style btn-info mt-lg-5 mt-4 mr-2">See my blog
                         <span class="fa fa-long-arrow-right"></a>
@@ -65,9 +65,8 @@
                     </div>
                     <p class="mt-md-5 mt-3">Saya lahir pada 8 Agustus 1997 di palembang</p>
                     <p>Saya Seorang Backend Developer, memiliki skill dalam menggunakan bahasa pemprograman PHP, HTML, CSS, dan beberapa framework seperti Codeigniter, Laravel, saya sedang mempelajari bahasa pemprograman Go-lang, dan mencoba untuk menggunakan kubernetes ,aws</p>
-                    {{-- <p>dan saya mempunyai keingin tahuan yang sedikit lebih terhadap teknolgi sekarang</p> --}}
-                    <a href="#btn" class="btn link-style p-0 mt-lg-5 mt-4">See More.. <span
-                            class="fa fa-long-arrow-right"></span></a>
+                    <a href="#btn" class="btn link-style p-0 mt-lg-5 mt-4">See More.. 
+                        <span class="fa fa-long-arrow-right"></span></a>
                 </div>
             </div>
         </div>
@@ -82,63 +81,32 @@
         <div class="container">
             <div class="title-content text-center">
                 <h3 class="title-small">My Blog</h3>
-                <h3 class="title-big mx-lg-5">Beberapa tulisan yang saya ketik di blog ini</h3>
+                <h3 class="title-big mx-lg-5">Beberapa postingan yang saya buat di blog ini</h3>
             </div>
             <div class="row galler-top mx-lg-5 mt-5">
-                <div class="col-lg-6 col-md-6">
+                @foreach ($posts as $p)
+                <div class="col-lg-6 col-md-6 mb-5">
                     <div class="protfolio-item hover14 pr-lg-2">
-                        <a href="#url" data-lightbox="example-set"
-                            data-title="Branding Design">
+                        <a href="/category/{{ $p->category->slug }}" data-lightbox="example-set"
+                            data-title="{{ $p->category->slug }}">
                             <figure>
-                                <img src="images/project1.jpg" alt="product" class="img-fluid radius-image">
-                                <div class="p-4">
-                                    <p>Graphic Design</p>
-                                    <a href="#url" class="mb-5 img-title">Branding Design</a>
-                                </div>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="protfolio-item hover14 mt-4 pl-lg-2">
-                        <a href="#url" data-lightbox="example-set"
-                            data-title="Gradient Website Development">
-                            <figure>
-                                <img src="images/project2.jpg" alt="product" class="img-fluid radius-image">
-                                <div class="p-4">
-                                    <p>Web Development</p>
-                                    <a href="#url" class="mb-5 img-title">Gradient Website Development</a>
+                                <img src="https://source.unsplash.com/600x400?{{ $p->category->name }}" alt="product" class="img-fluid radius-image">
+                                <div class="">
+                                      <a href="/blog/{{ $p->slug }}" class="mb-5 img-title">{{ $p->title }}</a>
+                                    <br>
+                                    <a href="/category/{{ $p->category->slug }}" class="title-small">{{ $p->category->name }}</a>
+                                    <br>
+                                    <p> {{ $p->excerpt }}...</p>
+                                     <p>By : <a href="/authors/{{ $p->user->username }}" class="fs-5">{{ $p->user->name }}</a></p>
+                                     {{ $p->created_at->diffForHumans() }}
                                 </div>
                             </figure>
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 mt-lg-0 mt-4">
-                    <div class="protfolio-item hover14 pr-lg-2">
-                        <a href="#url" data-lightbox="example-set"
-                            data-title="Design and Development">
-                            <figure>
-                                <img src="images/project4.jpg" alt="product" class="img-fluid radius-image">
-                                <div class="p-4">
-                                    <p>UI/UX Design</p>
-                                    <a href="#url" class="mb-5 img-title">Design and Development</a>
-                                </div>
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="protfolio-item hover14 mt-4 pl-lg-2">
-                        <a href="#url" data-lightbox="example-set" data-title="Magazine Content Writing">
-                            <figure>
-                                <img src="images/project3.jpg" alt="product" class="img-fluid radius-image">
-                                <div class="p-4">
-                                    <p>Content Writing</p>
-                                    <a href="#url" class="mb-5 img-title">Magazine Content Writing</a>
-                                </div>
-                            </figure>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <a href="#btn" class="btn link-style p-0 mt-lg-5 mt-2">See all Blog <span
+                @endforeach
+              <div class="text-center">
+                <a href="/blog" class="btn link-style p-0 mt-lg-5 mt-2">See all Blog <span
                         class="fa fa-long-arrow-right"></span></a>
             </div>
         </div>
@@ -146,27 +114,6 @@
 </section>
 <!--//gallery-->
 <!-- testimonials section -->
-
-<section class="w3l-project py-5">
-    <div class="container py-md-5 py-sm-4 py-2">
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="bottom-info">
-                    <div class="header-section">
-                        <h3 class="title-big">Ready to launch your next project?</h3>
-                        <p class="mt-3 pr-lg-5">Lorem ipsum dolor sit amet elit. Velit beatae
-                            rem ullam dolore nisi esse quasi, sit amet. Lorem ipsum dolor sit
-                            amet elit.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 align-self text-lg-right">
-                <a href="#get" class="btn btn-style btn-info mt-lg-0 mt-md-5 mt-4">Get started on a project<span
-                        class="fa fa-long-arrow-right"></span></a>
-            </div>
-        </div>
-    </div>
-</section>
 
 @endsection
 {{-- @section('container')

@@ -20,10 +20,10 @@
                 <ul class="navbar-nav ml-auto">
                   
                     <li class="nav-item @@contact__active">
-                        <a class="nav-link" href="contact.html">Beranda</a>
+                        <a class="nav-link" href="/">Beranda</a>
                     </li>
                     <li class="nav-item @@contact__active">
-                        <a class="nav-link" href="contact.html">Blog</a>
+                        <a class="nav-link" href="/blog">Blog</a>
                     </li>
                     <li class="nav-item @@contact__active">
                         <a class="nav-link" href="contact.html">About</a>

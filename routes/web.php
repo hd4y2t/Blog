@@ -18,7 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home', ['title' => 'Home']);
+    return view('home', [
+        'title' => 'Home',
+        'posts' => Post::all()->sortByDesc('id')->take(4)
+    ]);
 });
 
 Route::get('/about', function () {

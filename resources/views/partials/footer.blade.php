@@ -1,20 +1,20 @@
-@extends('layout/main')
 
+{{-- @extends('layout/main') --}}
 <section class="footer-17">
   <div class="footer17_sur py-5">
     <div class="container py-lg-5 py-md-4">
       <div class="footer17-top">
         <div class="footer17-top-left1_sur">
-          <h6>Contact Us</h6>
+          <h6>Contact Me</h6>
           <ul>
-            <li><a href="mailto:support@createPro.com">support@createPro.com</a></li>
-            <li><a href="tel:+(21) 255 999 8888">+(21) 255 999 8888</a></li>
+            <li><a href="mailto:hd4y2t@gmail.com">hd4y2t@gmail.com</a></li>
+            {{-- <li><a href="tel:+(21) 255 999 8888">+(21) 255 999 8888</a></li> --}}
           </ul>
           <ul class="footers-17_social">
-            <li><a href="#url" class="twitter"><span class="fa fa-twitter"></span></a></li>
-            <li><a href="#url" class="facebook"><span class="fa fa-facebook"></span></a></li>
-            <li><a href="#url" class="linkedin"><span class="fa fa-linkedin"></span></a></li>
-            <li><a href="#url" class="instagram"><span class="fa fa-instagram"></span></a></li>
+            <li><a href="https://github.com/hd4y2t" class="github"><span class="fa fa-github"></span></a></li>
+            {{-- <li><a href="#url" class="facebook"><span class="fa fa-facebook"></span></a></li> --}}
+            <li><a href="https://linkedin.com/in/hd4y2t" class="linkedin"><span class="fa fa-linkedin"></span></a></li>
+            {{-- <li><a href="#url" class="instagram"><span class="fa fa-instagram"></span></a></li> --}}
           </ul>
         </div>
         <div class="footer17-top-left2_sur">
@@ -25,33 +25,6 @@
             <li><a href="#blog">Latest News</a></li>
             <li><a href="#help">Help desk</a></li>
             <li><a href="#support">Support</a></li>
-          </ul>
-        </div>
-        <div class="footer17-top-left3_sur">
-          <h6>Company</h6>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="#team">Join our team</a></li>
-            <li><a href="contact.html">Contact us</a></li>
-            <li><a href="#press">Press release</a></li>
-            <li><a href="#careers">Careers</a></li>
-          </ul>
-        </div>
-        <div class="footer17-top-left4_sur">
-          <h6>Services</h6>
-          <ul>
-            <li><a href="#services">Digital Marketing</a></li>
-            <li><a href="#seo">SEO for Business</a></li>
-            <li><a href="#writing">Content writing</a></li>
-            <li><a href="#design">UI Design</a></li>
-          </ul>
-        </div>
-        <div class="footer17-top-left5_sur">
-          <h6>Legal </h6>
-          <ul>
-            <li><a href="#url">Privacy policy</a></li>
-            <li><a href="#url">Terms of use</a></li>
-            <li><a href="#url">Return Policy</a></li>
           </ul>
         </div>
       </div>
@@ -92,15 +65,15 @@
 <!-- //footer17 -->
 
 <!-- Template JavaScript -->
-<script src="/resources/js/jquery-3.3.1.min.js"></script>
+<script src="/js/jquery-3.3.1.min.js"></script>
 
-<script src="/resources/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
+<script src="/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
 
 <!-- pricing tabs js -->
-<script src="/resources/js/tabs.js"></script>
+<script src="/js/tabs.js"></script>
 
 <!-- owlcarousel -->
-<script src="/resources/js/owl.carousel.js"></script>
+<script src="/js/owl.carousel.js"></script>
 
 <!-- script for tesimonials carousel slider -->
 <script>
@@ -226,7 +199,7 @@
 </script>
 <!--//MENU-JS-->
 
-<script src="/resources/js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 
 </body>
 
