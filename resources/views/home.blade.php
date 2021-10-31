@@ -1,7 +1,7 @@
 @extends('layout/main')
 
 @section('section')
-    <section class="w3l-banner-agency py-5" id="work">
+<section class="w3l-banner-agency py-5" id="work">
     <div class="midd-w3 py-lg-5 py-md-4">
         <div class="container py-lg-2">
             <div class="row">
@@ -11,7 +11,7 @@
                     <p class="mt-4">I'm Backend Developer</p>
                     <a href="#btn" class="btn btn-style btn-outline-light mt-lg-5 mt-4">About Me</a>
                     <br>
-                    <a href="#btn" class="btn btn-style btn-info mt-lg-5 mt-4 mr-2">See my blog
+                    <a href="/blog" class="btn btn-style btn-info mt-lg-5 mt-4 mr-2">See my blog
                         <span class="fa fa-long-arrow-right"></a>
                 </div>
                 <div class="col-lg-6 text-center">
@@ -31,7 +31,7 @@
         </div>
         <div class="icon-effects-w3-3 text-right">
             <img src="/images/icon1.png" alt="" class="img-fluid">
-        </div> 
+        </div>
         <div class="icon-effects-w3-4 text-right">
             <img src="/images/icon4.png" alt="" class="img-fluid">
         </div>
@@ -64,8 +64,10 @@
                         </div>
                     </div>
                     <p class="mt-md-5 mt-3">Saya lahir pada 8 Agustus 1997 di palembang</p>
-                    <p>Saya Seorang Backend Developer, memiliki skill dalam menggunakan bahasa pemprograman PHP, HTML, CSS, dan beberapa framework seperti Codeigniter, Laravel, saya sedang mempelajari bahasa pemprograman Go-lang, dan mencoba untuk menggunakan kubernetes ,aws</p>
-                    <a href="#btn" class="btn link-style p-0 mt-lg-5 mt-4">See More.. 
+                    <p>Saya Seorang Backend Developer, memiliki skill dalam menggunakan bahasa pemprograman PHP, HTML,
+                        CSS, dan beberapa framework seperti Codeigniter, Laravel, saya sedang mempelajari bahasa
+                        pemprograman Go-lang, dan mencoba untuk menggunakan kubernetes ,aws</p>
+                    <a href="#btn" class="btn link-style p-0 mt-lg-5 mt-4">See More..
                         <span class="fa fa-long-arrow-right"></span></a>
                 </div>
             </div>
@@ -90,34 +92,36 @@
                         <a href="/category/{{ $p->category->slug }}" data-lightbox="example-set"
                             data-title="{{ $p->category->slug }}">
                             <figure>
-                                <img src="https://source.unsplash.com/600x400?{{ $p->category->name }}" alt="product" class="img-fluid radius-image">
+                                <img src="https://source.unsplash.com/600x400?{{ $p->category->name }}" alt="product"
+                                    class="img-fluid radius-image">
                                 <div class="">
-                                      <a href="/blog/{{ $p->slug }}" class="mb-5 img-title">{{ $p->title }}</a>
+                                    <a href="/blog/{{ $p->slug }}" class="mb-5 img-title">{{ $p->title }}</a>
                                     <br>
-                                    <a href="/category/{{ $p->category->slug }}" class="title-small">{{ $p->category->name }}</a>
+                                    <a href="/category/{{ $p->category->slug }}" class="title-small">{{
+                                        $p->category->name }}</a>
                                     <br>
                                     <p> {{ $p->excerpt }}...</p>
-                                     <p>By : <a href="/authors/{{ $p->user->username }}" class="fs-5">{{ $p->user->name }}</a></p>
-                                     {{ $p->created_at->diffForHumans() }}
+                                    <p>By : <a href="/authors/{{ $p->user->username }}" class="fs-5">{{ $p->user->name
+                                            }}</a></p>
+                                    {{ $p->created_at->diffForHumans() }}
                                 </div>
                             </figure>
                         </a>
                     </div>
                 </div>
                 @endforeach
-              <div class="text-center">
-                <a href="/blog" class="btn link-style p-0 mt-lg-5 mt-2">See all Blog <span
-                        class="fa fa-long-arrow-right"></span></a>
+                <div class="text-center">
+                    <a href="/blog" class="btn link-style p-0 mt-lg-5 mt-2">See all Blog <span
+                            class="fa fa-long-arrow-right"></span></a>
+                </div>
             </div>
         </div>
-    </div>
 </section>
 <!--//gallery-->
 <!-- testimonials section -->
 
 @endsection
 {{-- @section('container')
-    
+
 <h1>Halaman Home!</h1>
 @endsection --}}
-  

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
 use App\Models\Category;
@@ -34,25 +36,7 @@ Route::get('/about', function () {
 
 
 
-Route::get('/blog', [PostController::class, 'index']);
+Route::get('/blog', [PostController::class, 'index'],);
 Route::get('/blog/{post:slug}', [PostController::class, 'post']);
-
-Route::get('/categories', function () {
-    return view('categories', [
-        'title' => 'Post Categories',
-        'categories' => Category::all()
-    ]);
-});
-Route::get('/categories/{category:slug}', function (Category $category) {
-    return view('blog', [
-        'title' => "Post by Category : $category->name",
-        'posts' => $category->posts->load('category', 'user')
-    ]);
-});
-
-Route::get('/authors/{user:username}', function (User $user) {
-    return view('blog', [
-        'title' => "Post by author : $user->username",
-        'posts' => $user->posts->load('category', 'user')
-    ]);
-});
+Route::get('/categories/{category:slug}', [CategoryController::class, 'category']);
+Route::get('/authors/{user:username}', [AuthorController::class, 'user']);

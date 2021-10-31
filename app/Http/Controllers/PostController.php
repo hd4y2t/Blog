@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -11,9 +12,9 @@ class PostController extends Controller
     public function index()
     {
         return view('blog', [
-            'title' => 'All Posts',
-            // 'posts' => Post::all()
-            'posts' => Post::latest()->get()
+            'title' => 'Blog',
+            'posts' => Post::latest()->get(),
+            'categories' => Category::all()
         ]);
     }
 
@@ -21,7 +22,9 @@ class PostController extends Controller
     {
         return view('post', [
             'title' => 'Single Post',
-            'post' => $post
+            'post' => $post,
+            'categories' => Category::all(),
+            'posts' => Post::all()->sortByDesc('id')->take(3)
         ]);
     }
 }
