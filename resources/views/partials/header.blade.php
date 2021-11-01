@@ -18,17 +18,17 @@
 
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ml-auto">
-                  
-                    <li class="nav-item @@contact__active">
+
+                    <li class="nav-item {{ ($title === 'Home') ?'active' : '' }}">
                         <a class="nav-link" href="/">Beranda</a>
                     </li>
-                    <li class="nav-item @@contact__active">
+                    <li class="nav-item {{ ($title === 'Blog') ?'active' : '' }}">
                         <a class="nav-link" href="/blog">Blog</a>
                     </li>
-                    <li class="nav-item @@contact__active">
+                    <li class="nav-item {{ ($title === 'About') ?'active' : '' }}">
                         <a class="nav-link" href="contact.html">About</a>
                     </li>
-                    <li class="nav-item @@contact__active">
+                    <li class="nav-item {{ ($title === 'Contact') ?'active' : '' }}">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                     <li>

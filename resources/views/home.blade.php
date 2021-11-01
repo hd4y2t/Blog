@@ -9,7 +9,7 @@
                     <h5 class="title-small mb-2">Introduce</h5>
                     <h3 class="title-toobig">My Name is Hidayat</h3>
                     <p class="mt-4">I'm Backend Developer</p>
-                    <a href="#btn" class="btn btn-style btn-outline-light mt-lg-5 mt-4">About Me</a>
+                    <a href="#btn" class="btn btn-style btn-outline-info mt-lg-5 mt-4">About Me</a>
                     <br>
                     <a href="/blog" class="btn btn-style btn-info mt-lg-5 mt-4 mr-2">See my blog
                         <span class="fa fa-long-arrow-right"></a>

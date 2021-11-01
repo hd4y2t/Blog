@@ -12,7 +12,7 @@ class AuthorController extends Controller
     public function user(User $user)
     {
         return view('blog', [
-            'title' => "Post by Category : $user->name",
+            'title' => "Post by Author : $user->name",
             'posts' => $user->posts->load('category', 'user'),
             'categories' => Category::all()
         ]);

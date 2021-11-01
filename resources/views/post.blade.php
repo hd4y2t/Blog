@@ -95,71 +95,7 @@
                 </div>
             </div>
             <div class="sidebar-side col-lg-4 col-md-12 col-sm-12 mt-lg-0 mt-5">
-                <aside class="sidebar">
-                    <div class="sidebar-widget sidebar-blog-category">
-                        <div class="sidebar-title">
-                            <h4>Search here</h4>
-                        </div>
-                        <form action="#" class="search-box" method="post">
-                            <div class="form-group">
-                                <input type="search" name="search" placeholder="Search..." required="">
-                                <button><span class="fa fa-search"></span></button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!--Blog Category Widget-->
-                    <div class="sidebar-widget sidebar-blog-category">
-                        <div class="sidebar-title">
-                            <h4>Categories</h4>
-                        </div>
-                        <ul class="blog-cat">
-                            @foreach ($categories as $category)
-
-                            <li><a href="/categories/{{ $category->slug }}">{{ $category->name }} </a></li>
-                            @endforeach
-                        </ul>
-                    </div>
-
-                    <!-- Popular Post Widget-->
-                    <div class="sidebar-widget popular-posts">
-                        <div class="sidebar-title">
-                            <h4>Recent Posts</h4>
-                        </div>
-                        @foreach ($posts as $p)
-                        <article class="post">
-                            <figure class="post-thumb"><img
-                                    src="https://source.unsplash.com/featured/{{ $p->category->name }}" alt=""></figure>
-                            <div class="text"><a href="blog-single.html">{{ $p->title }}
-                                </a>
-                            </div>
-                            <div class="post-info">{{ $p->created_at->diffForHumans() }}</div>
-                        </article>
-                        @endforeach
-                    </div>
-
-                    <!-- sidebar sticky -->
-                    <div class="sidebar-sticky">
-                        <div class="sidebar-sticky-fix">
-                            <!-- Tags Widget-->
-                            <div class="sidebar-widget popular-tags">
-                                <div class="sidebar-title">
-                                    <h4>Tags</h4>
-                                </div>
-                                <a href="#url">Technology</a>
-                                <a href="#url">Modern</a>
-                                <a href="#url">Web</a>
-                                <a href="#url">Agency</a>
-                                <a href="#url">Web Development</a>
-                                <a href="#url">Digital</a>
-                                <a href="#url">Marketing</a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- //sidebar sticky -->
-
-                </aside>
+                @include('partials/sidebar')
             </div>
         </div>
     </div>

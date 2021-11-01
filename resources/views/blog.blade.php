@@ -86,6 +86,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col-lg-8">
+                    @if ($posts->count() > 0 )
                     <p class="title-small">{{ $title }}</p>
                     <div class="row">
                         @foreach ($posts as $p)
@@ -143,58 +144,14 @@
                         </ul>
                     </div>
                     <!-- //pagination -->
+                    @else
+                    <div>
+                        <p class="blog-desc">Belum ada postingan</p>
+                    </div>
+                    @endif
                 </div>
                 <div class="sidebar-side col-lg-4 col-md-12 col-sm-12 mt-lg-0 mt-5">
-                    <aside class="sidebar">
-                        <div class="sidebar-widget sidebar-blog-category">
-                            <div class="sidebar-title">
-                                <h4>Search here</h4>
-                            </div>
-                            <form action="#" class="search-box" method="post">
-                                <div class="form-group">
-                                    <input type="search" name="search" placeholder="Search..." required="">
-                                    <button><span class="fa fa-search"></span></button>
-                                </div>
-                            </form>
-                        </div>
-
-                        <!--Blog Category Widget-->
-                        <div class="sidebar-widget sidebar-blog-category">
-                            <div class="sidebar-title">
-                                <h4>Categories</h4>
-                            </div>
-                            <ul class="blog-cat">
-                                @foreach ($categories as $category)
-
-                                <li><a href="/categories/{{ $category->slug }}">{{ $category->name }} </a></li>
-                                @endforeach
-                            </ul>
-                        </div>
-
-                        <!-- Popular Post Widget-->
-
-                        <!-- sidebar sticky -->
-                        <div class="sidebar-sticky">
-                            <div class="sidebar-sticky-fix">
-                                <!-- Tags Widget-->
-                                <div class="sidebar-widget popular-tags">
-                                    <div class="sidebar-title">
-                                        <h4>Tags</h4>
-                                    </div>
-                                    <a href="#url">Technology</a>
-                                    <a href="#url">Modern</a>
-                                    <a href="#url">Web</a>
-                                    <a href="#url">Agency</a>
-                                    <a href="#url">Web Development</a>
-                                    <a href="#url">Digital</a>
-                                    <a href="#url">Marketing</a>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- //sidebar sticky -->
-
-                    </aside>
+                    @include('partials/sidebar')
                 </div>
             </div>
         </div>

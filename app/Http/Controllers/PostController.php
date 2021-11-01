@@ -11,10 +11,16 @@ class PostController extends Controller
 {
     public function index()
     {
+        $posts = Post::latest();
+        if (request('search')) {
+            $posts->where('title', 'like', '%' . request('search') . '%')
+                ->orWhere('body', 'like', '%' . request('search') . '%');
+        }
         return view('blog', [
             'title' => 'Blog',
-            'posts' => Post::latest()->get(),
-            'categories' => Category::all()
+            'posts' => $posts->get(),
+            'categories' => Category::all(),
+            'recent' => Post::all()->sortByDesc('id')->take(3)
         ]);
     }
 
@@ -24,7 +30,7 @@ class PostController extends Controller
             'title' => 'Single Post',
             'post' => $post,
             'categories' => Category::all(),
-            'posts' => Post::all()->sortByDesc('id')->take(3)
+            'recent' => Post::all()->sortByDesc('id')->take(3)
         ]);
     }
 }
