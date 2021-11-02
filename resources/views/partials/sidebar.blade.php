@@ -4,6 +4,9 @@
             <h4>Search here</h4>
         </div>
         <form action="/blog" class="search-box">
+            @if (request('category'))
+            <input type="hidden" name="category" value="{{ request('category') }}">
+            @endif
             <div class="form-group">
                 <input type="text" name="search" placeholder="Search..." value="{{ request('search') }}">
                 <button type="submit"><span class="fa fa-search"></span></button>
@@ -18,8 +21,7 @@
         </div>
         <ul class="blog-cat">
             @foreach ($categories as $category)
-
-            <li><a href="/categories/{{ $category->slug }}">{{ $category->name }} </a></li>
+            <li><a href="/blog?category={{ $category->slug }}">{{ $category->name }} </a></li>
             @endforeach
         </ul>
     </div>

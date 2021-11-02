@@ -39,7 +39,7 @@ Author URL: http://w3layouts.com
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>HDYT</title>
-
+  <link href="/images/pav.png" rel="icon">
   <!-- Google fonts -->
   <link href="//fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
 

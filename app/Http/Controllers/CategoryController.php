@@ -15,6 +15,7 @@ class CategoryController extends Controller
             'title' => "Post by Category : $category->name",
             'posts' => $category->posts->load('category', 'user'),
             'categories' => Category::all(),
+            'recent' => Post::all()->sortByDesc('id')->take(3)
         ]);
     }
 }

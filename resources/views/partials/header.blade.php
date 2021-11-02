@@ -4,10 +4,10 @@
             <a class="navbar-brand" href="/">
                 Hidayat
             </a>
-            <!-- if logo is image enable this   
-        <a class="navbar-brand" href="#index.html">
-            <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-        </a> -->
+            {{-- if logo is image enable this
+            <a class="navbar-brand" href="#index.html">
+                <img src="/images/pav.png" alt="Your logo" title="Your logo" style="height:35px;" />
+            </a> --}}
             <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
                 data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                 aria-label="Toggle navigation">

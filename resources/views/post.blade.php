@@ -17,7 +17,7 @@
                 </li>
                 <li>
                     <p class="title-small"><span class="fa fa-quote-left"></span> <a
-                            href="/categories/{{ $post->category->slug }}">{{
+                            href="/posts?category={{ $post->category->slug }}">{{
                             $post->category->name }}</a></p>
                 </li>
             </ul>
