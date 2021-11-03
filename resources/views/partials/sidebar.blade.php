@@ -7,6 +7,9 @@
             @if (request('category'))
             <input type="hidden" name="category" value="{{ request('category') }}">
             @endif
+            @if (request('author'))
+            <input type="hidden" name="author" value="{{ request('author') }}">
+            @endif
             <div class="form-group">
                 <input type="text" name="search" placeholder="Search..." value="{{ request('search') }}">
                 <button type="submit"><span class="fa fa-search"></span></button>

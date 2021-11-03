@@ -17,7 +17,7 @@
                         <div class="card">
                             <div class="card-header p-0 position-relative">
                                 <div class="position-absolute px-3 py-2" style="background-color: rgba(0, 0, 0, 0.5)">
-                                    <a href="/posts?category={{ $p->category->slug }}" class="title-small text-white">{{
+                                    <a href="/blog?category={{ $p->category->slug }}" class="title-small text-white">{{
                                         $p->category->name }}</a>
                                 </div>
                                 <a href="/blog/{{ $p->slug }}">
@@ -39,7 +39,7 @@
                                     </a>
                                     <ul class="blog-meta">
                                         <li>
-                                            <a href="/authors/{{ $p->user->username }}">{{ $p->user->name }} </a>
+                                            <a href="/blog?author={{ $p->user->username }}">{{ $p->user->name }} </a>
                                         </li>
                                         <li class="meta-item blog-lesson">
                                             {{-- <span class="meta-value"> Sep 10, 2020 </span>. --}}
@@ -56,14 +56,7 @@
                 </div>
                 <!-- pagination -->
                 <div class="pagination-wrapper mt-5 pt-lg-3 text-center">
-                    <ul class="page-pagination">
-                        <li><span aria-current="page" class="page-numbers current">1</span></li>
-                        <li><a class="page-numbers" href="#url">2</a></li>
-                        <li><a class="page-numbers" href="#url">3</a></li>
-                        <li><a class="page-numbers" href="#url">...</a></li>
-                        <li><a class="page-numbers" href="#url">15</a></li>
-                        <li><a class="next" href="#url">Next <span class="fa fa-angle-right"></span></a></li>
-                    </ul>
+                    {{ $posts->links('pagination::default') }}
                 </div>
                 <!-- //pagination -->
                 @else

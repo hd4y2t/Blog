@@ -9,7 +9,7 @@
             <ul class="blog-list mt-3 mb-3">
                 <li>
                     <p class="title-small"><span class="fa fa-user"></span> <a
-                            href="/authors/{{ $post->user->username }}">{{
+                            href="/blog?author{{ $post->user->username }}">{{
                             $post->user->name }}</a></p>
                 </li>
                 <li>
@@ -17,7 +17,7 @@
                 </li>
                 <li>
                     <p class="title-small"><span class="fa fa-quote-left"></span> <a
-                            href="/posts?category={{ $post->category->slug }}">{{
+                            href="/blog?category={{ $post->category->slug }}">{{
                             $post->category->name }}</a></p>
                 </li>
             </ul>
@@ -101,22 +101,3 @@
     </div>
 </section>
 @endsection
-{{-- <section class="w3l-index3" id="about">
-    <div class="midd-w3 py-5">
-        <div class="container pt-lg-5 py-md-3 py-2">
-            <div class="row">
-                <div class="container">
-                    <img src="https://source.unsplash.com/600x400?{{ $post->category->name }}" alt=""
-                        class="radius-image-full img-fluid mt-5 px-md-3 ">
-                </div>
-                <h2 class="title-big mx-0">{{ $post->title }}</h2>
-                <br>
-                <p class="title-small mb-3">{{ $post->user->username }} in <a
-                        href="/categories/{{ $post->category->name }}" class="text-decoration-none">{{
-                        $post->category->name }}</a> {{ $post->created_at->diffForHumans() }} </p>
-                {!! $post->body !!}
-                <a href="/blog" class="text-decoration-none d-block mt-3">back to post</a>
-            </div>
-        </div>
-    </div>
-</section> --}}
